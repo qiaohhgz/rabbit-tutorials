@@ -25,9 +25,11 @@ public class Send {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             String msg = "Hello World!";
 
-            channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
-
-            System.out.println("[x] Sent '" + msg + "'");
+            for (int i = 0; i < 1000; i++) {
+                msg = "Hello World! Num is " + i;
+                channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
+                System.out.println("[x] Sent '" + msg + "'");
+            }
         } finally {
             if (channel != null)
                 channel.close();
