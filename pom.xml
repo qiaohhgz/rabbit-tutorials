@@ -8,6 +8,7 @@
     <modules>
         <module>hello-world</module>
         <module>work-queues</module>
+        <module>publish-subscribe</module>
     </modules>
     <packaging>pom</packaging>
 
